@@ -10,15 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5c697ea-44e2-4e4b-9a1d-1b85bb141700" name="Changes" comment="Design de l'interface de connexion">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/controllers/BatimentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addImmeuble.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/updateUser.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/updateUserInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/controllers/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/controllers/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/entities/Immeuble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/entities/Immeuble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/hAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/hLocataire.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hLocataire.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/hProprio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hProprio.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +191,7 @@
       <option name="presentableId" value="Default" />
       <updated>1718840768566</updated>
       <workItem from="1718840770281" duration="3071000" />
-      <workItem from="1718844850607" duration="42881000" />
+      <workItem from="1718844850607" duration="44131000" />
     </task>
     <task id="LOCAL-00001" summary="Design de l'interface de connexion">
       <option name="closed" value="true" />

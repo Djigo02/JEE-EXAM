@@ -46,6 +46,7 @@
             </tr>
             </thead>
             <tbody>
+            <% if (request.getAttribute("immeubles") != null) {%>
             <% for (Immeuble immeuble : (List<Immeuble>) request.getAttribute("immeubles")){%>
             <tr>
                 <th scope="row"><%=immeuble.getId()%></th>
@@ -53,12 +54,16 @@
                 <td><%=immeuble.getAdresse()%></td>
                 <td><%=immeuble.getUser().getPrenom()%> <%=immeuble.getUser().getNom()%></td>
                 <td class="d-flex justify-content-between">
-                    <a href="" class="btn btn-sm btn-warning" title="Voir appartement">👀</a>
-                    <a href="" class="btn btn-sm btn-warning" title="Modifier">🖌</a>
-                    <a href="" class="btn btn-sm btn-danger" title="Supprimer">❌</a>
+                    <a href="voirAP.bat?action=voirAP?idI=<%=immeuble.getId()%>" class="btn btn-sm btn-warning" title="Voir appartement">👀</a>
+                    <a href="addImmeuble.bat?action=updateImmeuble?idI=<%=immeuble.getId()%>" class="btn btn-sm btn-warning" title="Modifier">🖌</a>
+                    <a href="deleteImmeuble.bat?action=deleteImmeuble?idI=<%=immeuble.getId()%>" class="btn btn-sm btn-danger" title="Supprimer">❌</a>
                 </td>
             </tr>
             <% } %>
+            <% } else { %>
+                <th scope="row" colspan="5"> Aucun immeuble</th>
+            <% } %>
+
             </tbody>
         </table>
     </div>
