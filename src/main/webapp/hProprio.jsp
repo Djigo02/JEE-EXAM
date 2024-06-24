@@ -54,9 +54,9 @@
                 <td><%=immeuble.getAdresse()%></td>
                 <td><%=immeuble.getUser().getPrenom()%> <%=immeuble.getUser().getNom()%></td>
                 <td class="d-flex justify-content-between">
-                    <a href="voirAP.bat?action=voirAP?idI=<%=immeuble.getId()%>" class="btn btn-sm btn-warning" title="Voir appartement">👀</a>
-                    <a href="addImmeuble.bat?action=updateImmeuble?idI=<%=immeuble.getId()%>" class="btn btn-sm btn-warning" title="Modifier">🖌</a>
-                    <a href="deleteImmeuble.bat?action=deleteImmeuble?idI=<%=immeuble.getId()%>" class="btn btn-sm btn-danger" title="Supprimer">❌</a>
+                    <a href="voirAP.bat?action=voirAP&idI=<%=immeuble.getId()%>" class="btn btn-sm btn-warning" title="Voir appartement">👀</a>
+                    <a href="updateImmeuble.bat?action=updateImmeuble&idI=<%=immeuble.getId()%>" class="btn btn-sm btn-warning" title="Modifier">🖌</a>
+                    <a href="deleteImmeuble.bat?action=deleteImmeuble&idI=<%=immeuble.getId()%>" class="btn btn-sm btn-danger" title="Supprimer">❌</a>
                 </td>
             </tr>
             <% } %>

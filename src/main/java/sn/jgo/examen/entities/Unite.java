@@ -12,6 +12,17 @@ public class Unite {
     @Column(nullable = false)
     private double superficie;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Column(nullable = false)
+    private String description;
+
     @Column(length = 255)
     private int loyer;
 

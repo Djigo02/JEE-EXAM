@@ -18,7 +18,7 @@ public class HelloServlet extends HttpServlet {
     private EntityManagerFactory emf;
 
     public void init() {
-        emf = Persistence.createEntityManagerFactory("immoPU");
+        emf = Persistence. createEntityManagerFactory("immoPU");
     }
 
     @Override

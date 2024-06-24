@@ -36,25 +36,33 @@ public class BatimentServlet extends HttpServlet {
         if (action.equals("addImmeuble")){
             // Afficher le formulaire d'ajout immeuble
             request.getRequestDispatcher("addImmeuble.jsp").forward(request, response);
-        } else if (action.equals("delete")) {
-            int URL_ID = Integer.parseInt(request.getParameter("id"));
-            // Supprimer un utilisateur
+        } else if (action.equals("deleteImmeuble")) {
+            int URL_ID = Integer.parseInt(request.getParameter("idI"));
+            // Supprimer un immeuble
             try {
                 em.getTransaction().begin();
+                Immeuble i = em.find(Immeuble.class, URL_ID);
+                em.remove(i);
+                em.getTransaction().commit();
 
-
-                request.getRequestDispatcher("hAdmin.jsp").forward(request, response);
+                TypedQuery<Immeuble> queryImmProprio = em.createQuery("SELECT i FROM Immeuble i WHERE i.user = :user", Immeuble.class);
+                queryImmProprio.setParameter("user",em.find(User.class,Auth.getAuth().getId()));
+                request.setAttribute("immeubles", queryImmProprio.getResultList());
+                request.getRequestDispatcher("hProprio.jsp").forward(request, response);
             }catch (Exception e){
                 e.printStackTrace();
-
+                request.getRequestDispatcher("hProprio.jsp").forward(request, response);
             }
-        } else if (action.equals("update")) {
-
-            request.getRequestDispatcher("updateUser.jsp").forward(request, response);
-        }
-        else if (action.equals("mesinfos")) {
-
-            request.getRequestDispatcher("updateUserInfo.jsp").forward(request, response);
+        } else if (action.equals("updateImmeuble")) {
+            int URL_ID = Integer.parseInt(request.getParameter("idI"));
+            Immeuble immeuble = em.find(Immeuble.class, URL_ID);
+            request.setAttribute("immeuble",immeuble);
+            request.getRequestDispatcher("updateImmeuble.jsp").forward(request, response);
+        } else if (action.equals("voirAP")) {
+            int URL_ID = Integer.parseInt(request.getParameter("idI"));
+            Immeuble immeuble = em.find(Immeuble.class, URL_ID);
+            request.setAttribute("immeuble",immeuble);
+            request.getRequestDispatcher("appartement.jsp").forward(request, response);
         }
 
     }
@@ -68,7 +76,7 @@ public class BatimentServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         EntityManager em = emf.createEntityManager();
-        if (action.equals("add")){
+        if (action.equals("addI")){
             User proprio = em.find(User.class, Auth.getAuth().getId());
             try {
                 Immeuble immeuble = new Immeuble();
@@ -91,15 +99,28 @@ public class BatimentServlet extends HttpServlet {
             } finally {
                 em.close();
             }
-        } else if (action.equals("update")) {
-            int URL_ID = Integer.parseInt(request.getParameter("id"));
-            int role = Integer.parseInt(request.getParameter("role"));
+        } else if (action.equals("updateI")) {
+            int URL_ID = Integer.parseInt(request.getParameter("idI"));
             try {
+                Immeuble immeuble = em.find(Immeuble.class, URL_ID);
 
+                if (immeuble!=null){
+                    immeuble.setNom(nom);
+                    immeuble.setDescription(description);
+                    immeuble.setAdresse(adresse);
+                    // Transaction pour la mise à jour de l'utilisateur
+                    em.getTransaction().begin();
+                    em.merge(immeuble);
+                    em.getTransaction().commit();
+                }
 
+                TypedQuery<Immeuble> queryImmProprio = em.createQuery("SELECT i FROM Immeuble i WHERE i.user = :user", Immeuble.class);
+                queryImmProprio.setParameter("user",em.find(User.class,Auth.getAuth().getId()));
+                request.setAttribute("immeubles", queryImmProprio.getResultList());
+                request.getRequestDispatcher("hProprio.jsp").forward(request, response);
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher("hAdmin.jsp").forward(request, response);
+                request.getRequestDispatcher("hProprio.jsp").forward(request, response);
             } finally {
                 em.close();
             }

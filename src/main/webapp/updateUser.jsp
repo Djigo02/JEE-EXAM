@@ -51,11 +51,6 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="control-label">Mot de passe </label>
-                    <input type="text" class="form-control" value="<%=User.decrypt(user.getMdp())%>" name="mdp">
-                </div>
-                <br>
-                <div class="form-group">
                     <label class="control-label">Role </label>
                     <label>
                         <select class="form-control" name="role">
