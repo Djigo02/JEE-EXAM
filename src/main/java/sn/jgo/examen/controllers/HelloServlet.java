@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import sn.jgo.examen.entities.Auth;
+import sn.jgo.examen.entities.Immeuble;
 import sn.jgo.examen.entities.Role;
 import sn.jgo.examen.entities.User;
 
@@ -57,6 +58,9 @@ public class HelloServlet extends HttpServlet {
                         request.getRequestDispatcher("hAdmin.jsp").forward(request, response);
                         break;
                     case 2:
+                        TypedQuery<Immeuble> queryImmProprio = em.createQuery("SELECT i FROM Immeuble i WHERE i.user = :user", Immeuble.class);
+                        queryImmProprio.setParameter("user",em.find(User.class,Auth.getAuth().getId()));
+                        request.setAttribute("immeubles", queryImmProprio.getResultList());
                         request.getRequestDispatcher("hProprio.jsp").forward(request, response);
                         break;
                     case 3:

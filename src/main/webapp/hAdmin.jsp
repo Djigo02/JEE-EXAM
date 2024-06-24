@@ -40,6 +40,9 @@
                 Liste des utilisateurs
             </div>
             <div class="card-body">
+                <% if(request.getAttribute("users")==null){%>
+                <div class="h4 text-center">Pas d'utilisateurs pour le moment</div>
+                <% } else {%>
                 <table class="table">
                     <thead>
                     <tr>
@@ -65,6 +68,7 @@
                     <%}%>
                     </tbody>
                 </table>
+                <% }%>
             </div>
         </div>
     </div>
