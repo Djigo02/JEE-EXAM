@@ -38,19 +38,19 @@
 <div class="container">
     <a href="addAp.ap?action=getaddAP&id=<%=immeuble.getId()%>" class="float-end btn btn-sm btn-success">Ajouter un appartement</a>
     <div class="h3">Liste des appartements de l'immeuble <%=immeuble.getNom()%></div>
-    <%for (Unite u : immeuble.getUnites()){%>
     <div class="row mt-4">
-        <div class="card" style="width: 18rem;">
+    <%for (Unite u : immeuble.getUnites()){%>
+        <div class="card col" style="width: 18rem;">
             <div class="card-body">
                 <h6 class="card-title mb-2">Prix de la location : <%=u.getLoyer()%> Francs CFA</h6>
                 <h6 class="card-subtitle mb-2 text-body-secondary">Superficie : <%=u.getSuperficie()%> m2</h6>
                 <p class="card-text"><%=u.getDescription()%></p>
-                <a href="" class="card-link">Modifier</a>
-                <a href="" class="card-link">Supprimer</a>
+                <a href="updateAp.ap?action=updateAp&idUnit=<%=u.getId()%>" class="card-link">Modifier</a>
+                <a href="updateAp.ap?action=deleteUnite&idUnit=<%=u.getId()%>" class="card-link">Supprimer</a>
             </div>
         </div>
-    </div>
     <%}%>
+    </div>
 </div>
 </body>
 </html>

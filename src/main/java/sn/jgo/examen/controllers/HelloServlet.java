@@ -1,14 +1,12 @@
 package sn.jgo.examen.controllers;
 
 import java.io.*;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import sn.jgo.examen.entities.Auth;
-import sn.jgo.examen.entities.Immeuble;
-import sn.jgo.examen.entities.Role;
-import sn.jgo.examen.entities.User;
+import sn.jgo.examen.entities.*;
 
 import javax.persistence.*;
 
@@ -64,6 +62,9 @@ public class HelloServlet extends HttpServlet {
                         request.getRequestDispatcher("hProprio.jsp").forward(request, response);
                         break;
                     case 3:
+                        TypedQuery<Unite> queryApp = em.createQuery("SELECT u FROM Unite u", Unite.class);
+                        List<Unite> uniteList = queryApp.getResultList();
+                        request.setAttribute("uniteList", uniteList);
                         request.getRequestDispatcher("hLocataire.jsp").forward(request, response);
                         break;
                     default:
