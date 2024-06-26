@@ -1,6 +1,7 @@
 <%@ page import="sn.jgo.examen.entities.Auth" %>
 <%@ page import="java.util.List" %>
-<%@ page import="sn.jgo.examen.entities.Unite" %><%--
+<%@ page import="sn.jgo.examen.entities.Unite" %>
+<%@ page import="sn.jgo.examen.entities.Demande" %><%--
   Created by IntelliJ IDEA.
   User: mehme
   Date: 23/06/2024
@@ -13,9 +14,8 @@
 
 <html>
 <head>
-    <title>Page Locataire</title>
+    <title>Liste de mes demandes</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <%--  NAVBAR  --%>
@@ -42,21 +42,26 @@
     </nav>
     <%--  NAVBAR END --%>
     <div class="container">
-        <%for (Unite u:unites){%>
+        <% List<Demande> demandes = (List<Demande>) request.getAttribute("demandes"); %>
+        <h3 class="h3 text-center text-uppercase mt-2">Listes de mes demandes</h3>
+        <% for (Demande d : demandes) { %>
         <div class="row mt-4">
             <div class="card col" style="width: 18rem;">
                 <div class="card-body">
-                    <h6 class="card-title mb-2">Prix de la location : <%=u.getLoyer()%> Francs CFA</h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Superficie : <%=u.getSuperficie()%> m2</h6>
-                    <p class="card-text"><%=u.getDescription()%></p>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Adresse : <%=u.getImmeuble().getAdresse()%></h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Proprietaire : <%=u.getImmeuble().getUser().getIdentifiant()%></h6>
-                    <a href="add.demande?action=add&idUnit=<%=u.getId()%>" class="btn btn-sm btn-success">Souscrire une demande</a>
+                    <p class="card-title mb-2">Appartement : <%= d.getUnite().getDescription() %></p>
+                    <p class="card-subtitle mb-2 text-body-secondary">Superficie : <%= d.getUnite().getSuperficie() %> m²</p>
+                    <p class="card-subtitle mb-2 text-body-secondary">Loyer : <%= d.getUnite().getLoyer() %> Francs CFA</p>
+                    <p class="card-text">Message : <em><%= d.getMessage() %></em></p>
+                    <p class="card-subtitle mb-2 text-body-secondary">Statut : <%= d.getStatut() %></p>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Propriétaire : <%= d.getUnite().getImmeuble().getUser().getIdentifiant() %></h6>
+<%--                    <% if ("En attente de paiement".equals(d.getStatut())) { %>--%>
+<%--                    <a href="validerPaiement?demandeId=<%= d.getId() %>" class="btn btn-sm btn-success">Valider Paiement</a>--%>
+<%--                    <a href="refuserPaiement?demandeId=<%= d.getId() %>" class="btn btn-sm btn-danger">Refuser Paiement</a>--%>
+<%--                    <% } %>--%>
                 </div>
             </div>
         </div>
-        <%}%>
+        <% } %>
     </div>
-
 </body>
 </html>

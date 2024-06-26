@@ -10,13 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5c697ea-44e2-4e4b-9a1d-1b85bb141700" name="Changes" comment="Design de l'interface de connexion">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/updateAppartement.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/controllers/DemandeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/entities/Demande.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/demande.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/mesDemandes.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/controllers/AppartementServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/controllers/AppartementServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/controllers/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sn/jgo/examen/controllers/HelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addAppartement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addAppartement.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/appartement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/appartement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/hLocataire.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hLocataire.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/hProprio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hProprio.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +200,9 @@
       <updated>1718840768566</updated>
       <workItem from="1718840770281" duration="3071000" />
       <workItem from="1718844850607" duration="44768000" />
-      <workItem from="1719234763377" duration="19158000" />
+      <workItem from="1719234763377" duration="20023000" />
+      <workItem from="1719339616209" duration="6605000" />
+      <workItem from="1719409744331" duration="4935000" />
     </task>
     <task id="LOCAL-00001" summary="Design de l'interface de connexion">
       <option name="closed" value="true" />

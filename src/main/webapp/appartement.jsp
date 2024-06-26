@@ -23,6 +23,7 @@
 <head>
     <title>Page appartements</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <%--  NAVBAR  --%>
@@ -40,13 +41,15 @@
     <div class="h3">Liste des appartements de l'immeuble <%=immeuble.getNom()%></div>
     <div class="row mt-4">
     <%for (Unite u : immeuble.getUnites()){%>
-        <div class="card col" style="width: 18rem;">
-            <div class="card-body">
-                <h6 class="card-title mb-2">Prix de la location : <%=u.getLoyer()%> Francs CFA</h6>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Superficie : <%=u.getSuperficie()%> m2</h6>
-                <p class="card-text"><%=u.getDescription()%></p>
-                <a href="updateAp.ap?action=updateAp&idUnit=<%=u.getId()%>" class="card-link">Modifier</a>
-                <a href="updateAp.ap?action=deleteUnite&idUnit=<%=u.getId()%>" class="card-link">Supprimer</a>
+        <div class="col-xl-4 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Prix de la location : <%=u.getLoyer()%> Francs CFA</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Superficie : <%=u.getSuperficie()%> m2</h6>
+                    <p class="card-text"><%=u.getDescription()%>.</p>
+                    <a href="updateAp.ap?action=updateAp&idUnit=<%=u.getId()%>" class="card-link">Modifier</a>
+                    <a href="updateAp.ap?action=deleteUnite&idUnit=<%=u.getId()%>" class="card-link">Supprimer</a>
+                </div>
             </div>
         </div>
     <%}%>

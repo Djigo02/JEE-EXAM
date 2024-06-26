@@ -20,6 +20,7 @@
 <head>
     <title>Page proprio</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <%--  NAVBAR  --%>
@@ -35,7 +36,7 @@
     <div class="container">
         <a href="addImmeuble.bat?action=addImmeuble" class="float-end btn btn-sm btn-success">Ajouter un batiment</a>
         <div class="h3">Liste de mes immeubles</div>
-        <table class="table">
+        <table class="table border text-nowrap text-md-nowrap table-bordered mb-0">
             <thead>
             <tr>
                 <th scope="col">#</th>
