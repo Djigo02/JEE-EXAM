@@ -6,14 +6,14 @@ import javax.mail.internet.*;
 public class EmailSender {
 
     public static void sendEmail(String to, String subject, String body) {
-        final String username = "djigo@jgotechmaker.com"; // Votre adresse email
-        final String password = "mouh@m@d_techmaker";    // Votre mot de passe
+        final String username = "adresse@mail.com"; // Votre adresse email
+        final String password = "motdepasse";    // Votre mot de passe
 
         // Propriétés de configuration pour la connexion au serveur SMTP
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "web58.lws-hosting.com");  // Adresse du serveur SMTP
+        props.put("mail.smtp.host", "adresse@serveur");  // Adresse du serveur SMTP
         props.put("mail.smtp.port", "587");               // Port SMTP (465 pour SSL, 587 pour TLS)
 
         // Obtenir une session de messagerie avec les propriétés et les informations d'authentification
