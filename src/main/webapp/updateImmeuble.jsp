@@ -14,6 +14,7 @@
 <head>
     <title>Mise a jour d'un immeuble</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <%--  NAVBAR  --%>

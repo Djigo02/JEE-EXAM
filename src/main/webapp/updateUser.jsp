@@ -15,6 +15,7 @@
 <head>
     <title>Mise a jour d'un utilisateur</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <%--  NAVBAR  --%>

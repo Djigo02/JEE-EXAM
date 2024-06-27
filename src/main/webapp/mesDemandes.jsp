@@ -16,6 +16,7 @@
 <head>
     <title>Liste de mes demandes</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <%--  NAVBAR  --%>

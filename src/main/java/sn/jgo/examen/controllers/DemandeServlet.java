@@ -5,10 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import sn.jgo.examen.entities.Auth;
-import sn.jgo.examen.entities.Demande;
-import sn.jgo.examen.entities.Unite;
-import sn.jgo.examen.entities.User;
+import sn.jgo.examen.entities.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -76,6 +73,8 @@ public class DemandeServlet extends HttpServlet {
                 em.persist(demande);
                 em.getTransaction().commit();
 
+                EmailSender sender = new EmailSender();
+                sender.sendEmail(demande.getDemandeur().getIdentifiant(),"Demande de location","<h3>Votre demande pour "+demande.getUnite().getDescription()+" est en cours de paiement.</h3>");
                 TypedQuery<Unite> queryApp = em.createQuery("SELECT u FROM Unite u", Unite.class);
                 List<Unite> uniteList = queryApp.getResultList();
                 request.setAttribute("uniteList", uniteList);

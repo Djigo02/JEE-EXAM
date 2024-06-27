@@ -7,10 +7,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import sn.jgo.examen.entities.Auth;
 import sn.jgo.examen.entities.Role;
+import sn.jgo.examen.entities.Unite;
 import sn.jgo.examen.entities.User;
 
 import javax.persistence.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = "*.user")
 public class UserServlet extends HttpServlet {
@@ -116,6 +118,9 @@ public class UserServlet extends HttpServlet {
                     em.merge(user);
                     em.getTransaction().commit();
                 }
+                TypedQuery<Unite> queryApp = em.createQuery("SELECT u FROM Unite u", Unite.class);
+                List<Unite> uniteList = queryApp.getResultList();
+                request.setAttribute("uniteList", uniteList);
                 request.getRequestDispatcher("hLocataire.jsp").forward(request, response);
             } catch (Exception e) {
                 e.printStackTrace();
